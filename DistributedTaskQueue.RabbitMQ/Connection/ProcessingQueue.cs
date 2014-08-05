@@ -17,7 +17,6 @@ namespace DistributedTaskQueue.RabbitMQ.Connection
 		{
 			_uri = uri;
 			_loger = loger;
-			Connector.Connect(_uri);
 			new Thread(m => ThreadProc((IModel) m)).Start(Connector.Connect(_uri));
 		}
 
